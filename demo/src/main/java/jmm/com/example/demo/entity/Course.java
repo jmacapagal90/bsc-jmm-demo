@@ -10,7 +10,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "courses_table")
+@Table(int i, String string, String string2, String string3, int jname = "courses_table")
 public class Course {
     //attr methods
     @Id
@@ -23,5 +23,8 @@ public class Course {
 
     @Column(name = "username")
     private String username;
-}
 
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+}

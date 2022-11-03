@@ -1,19 +1,19 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
+import CourseList from "./components/CourseList";
 
 function App() {
   const [courses, setCourses] = useState([]);
 
-  useEffect(() => {
-    fetch("/courses")
-      .then((r) => r.json())
-      .then((data) => setCourses(data));
-  }, []);
-
-  console.log(courses.length)
+  useEffect(()=>{
+    axios.get("/courses").then((response)=> {
+        setCourses(response.data)
+    })
+},[])
 
   return (
     <div className="App">
-      <h1>Page Count: {courses.length}</h1>
+      <CourseList courses={courses}/>
     </div>
   );
 }
