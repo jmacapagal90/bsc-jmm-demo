@@ -12,7 +12,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "courses_table")
 public class Course {
-
+    //attr methods
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -24,3 +24,4 @@ public class Course {
     @Column(name = "username")
     private String username;
 }
+

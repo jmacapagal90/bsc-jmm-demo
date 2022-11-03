@@ -12,9 +12,9 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Table(name = "user")
 public class User {
-
+    //attr methods
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO) //generates primary key
     private int id;
 
     @Column(name = "username", unique = true)
