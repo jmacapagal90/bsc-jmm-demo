@@ -6,12 +6,16 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+import org.springframework.data.rest.core.annotation.RestResource;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(int i, String string, String string2, String string3, int jname = "courses_table")
 public class Course {
+    public Course(int i, String string, String string2, String string3, int j) {
+    }
+
     //attr methods
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,6 +29,6 @@ public class Course {
     private String username;
 
     @OneToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "USER_ID")
     private User user;
 }

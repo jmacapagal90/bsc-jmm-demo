@@ -12,6 +12,9 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Table(name = "user")
 public class User {
+    public User(int i, String string, String string2) {
+    }
+
     //attr methods
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO) //generates primary key
@@ -21,7 +24,7 @@ public class User {
     private String username;
     private String password;
 
-    @OneToOne(mappedBy = "course")
+    @OneToOne(mappedBy = "Course")
     private Course course;
 
 }

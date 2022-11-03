@@ -19,7 +19,7 @@ public class CourseDataLoader implements CommandLineRunner {
 	}
 
 	private void loadCourseData() {
-        Course course1 = new Course();
+        Course course1 = new Course(1,"Poli Sci 101","Intro to Poli Science","Active",1);
         Course course2 = new Course(1,"Poli Sci 101","Intro to Poli Science","Active",2);
         Course course3 = new Course(1,"Poli Sci 101","Intro to Poli Science","Active",3);
         Course course4 = new Course(4,"Chocolate 101","Chocolate Making","Active",3);
