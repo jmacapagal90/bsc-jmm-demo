@@ -1,13 +1,21 @@
 
 
-export default function CourseCard({
+function CourseCard({
+    id,
     name,
     description,
     status,
-    username
+    username,
+    handleDeleteCourse
     }){
 
-    console.log(name)
+    function onDeleteCourse(){
+        console.log(id)
+        fetch(`/delete/${id}`, {
+            method: 'DELETE',
+        }).then(r => r.json());
+        handleDeleteCourse(id)
+    }
 
     return (
         <div class="col">
@@ -15,10 +23,13 @@ export default function CourseCard({
                 <div class="card-body">
                     <h5 class="card-title"><strong>{name}</strong></h5>
                     <p class="card-text">{description}</p>
-                    <p class="card-text">Class Status {status}</p>
-                    <p class="card-text">Students: {username}</p>
+                    <p class="card-text">Course Status: {status}</p>
+                    <p class="card-text">Course Code: {username}</p>
+                    <button onClick={onDeleteCourse}>Remove Course</button>
                 </div>
             </div>
         </div>
     )
 }
+
+export default CourseCard;

@@ -40,7 +40,7 @@ public class CourseService {
     //PUT
     public Course updateCourse(Course course) {
         System.out.println("updates");
-        Course existing_course = courseRepository.findById(course.getCourse_id()).orElse(null);
+        Course existing_course = courseRepository.findById(course.getId()).orElse(null);
         existing_course.setName(course.getName());
         existing_course.setDescription(course.getDescription());
         existing_course.setStatus(course.getStatus());
