@@ -19,7 +19,15 @@ public class CourseDataLoader implements CommandLineRunner {
 	}
 
 	private void loadCourseData() {
+        Course course1 = new Course(1,"Poli Sci 101","Intro to Poli Science","Active","johndoe1");
+        Course course2 = new Course(1,"Poli Sci 101","Intro to Poli Science","Active","janedoe2");
+        Course course3 = new Course(1,"Poli Sci 101","Intro to Poli Science","Active","janedoe3");
 
+
+
+        courseService.saveCourse(course1);
+        courseService.saveCourse(course2);
+        courseService.saveCourse(course3);
 		System.out.println("Seeded Courses");
 	}
 }
