@@ -19,14 +19,14 @@ public class CourseDataLoader implements CommandLineRunner {
 	}
 
 	private void loadCourseData() {
-        Course course1 = new Course(1,"Poli Sci 101","Intro to Poli Science","Active","johndoe1");
-        Course course2 = new Course(2,"Poli Sci 101","Intro to Poli Science","Active","janedoe1");
-        Course course3 = new Course(3,"Poli Sci 101","Intro to Poli Science","Active","jackdoe1");
-        Course course4 = new Course(4,"Chocolate 101","Chocolate Making","Active","jackdoe1");
-        Course course5 = new Course(5,"Marketing 101","Intro to Marketing","Active","johndoe1");
-        Course course6 = new Course(6,"Wine 101","Intro to Wine","Active","janedoe1");
-        Course course7 = new Course(7,"Accounting 201","Accounting","Active","jackdoe1");
-        Course course8 = new Course(8,"Comp Sci 101","Comp Sci","Active","jackdoe1");
+        Course course1 = new Course();
+        Course course2 = new Course(1,"Poli Sci 101","Intro to Poli Science","Active",2);
+        Course course3 = new Course(1,"Poli Sci 101","Intro to Poli Science","Active",3);
+        Course course4 = new Course(4,"Chocolate 101","Chocolate Making","Active",3);
+        Course course5 = new Course(5,"Marketing 101","Intro to Marketing","Active",1);
+        Course course6 = new Course(6,"Wine 101","Intro to Wine","Active",2);
+        Course course7 = new Course(7,"Accounting 201","Accounting","Active",3);
+        Course course8 = new Course(8,"Comp Sci 101","Comp Sci","Active",2);
 
 
         courseService.saveCourse(course1);

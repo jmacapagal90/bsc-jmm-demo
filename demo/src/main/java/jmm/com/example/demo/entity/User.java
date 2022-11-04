@@ -20,4 +20,8 @@ public class User {
     @Column(name = "username", unique = true)
     private String username;
     private String password;
+
+    @OneToOne(mappedBy = "course")
+    private Course course;
+
 }
