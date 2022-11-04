@@ -19,13 +19,7 @@ public class UserDataLoader implements CommandLineRunner {
 	}
 
 	private void loadUserData() {
-        User user1 = new User(1,"johndoe1","test1234");
-        User user2 = new User(2,"janedoe2","test4321");
-        User user3 = new User(3,"jackdoe3","test6789");
-        userService.saveUser(user1);
-        userService.saveUser(user2);
-        userService.saveUser(user3);
-		
+
 		System.out.println("Seeded Users");
 	}
 }
