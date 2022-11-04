@@ -8,7 +8,6 @@ function CourseForm({onSubmitNewCourse}){
 
    function submitCourse(e){
     e.preventDefault();
-    alert("Thanks For Submitting a Beer!")
     const newCourseObj = {
         name: courseName,
         description: courseDesc,

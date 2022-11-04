@@ -9,5 +9,5 @@
 - Bootstrap (v5)
 
 ## Summary
-SPA to do list utilizing React and Java/Spring Boot API
+MVP of a basic class/to-do SPA utilizing React and Java/Spring Boot API
 

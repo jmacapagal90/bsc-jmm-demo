@@ -26,7 +26,7 @@ function App() {
   return (
     <div className="App">
       <div class="container-fluid">
-        <h1 class="text-center">Welcome</h1>
+        <h1 class="text-center"><strong>Add A Course To Your Syllabus</strong></h1>
         <div class="d-flex justify-content-center">
           <CourseList courses={courses} handleDeleteCourse={handleDeleteCourse}/>
           <CourseForm onSubmitNewCourse={onSubmitNewCourse}/>
