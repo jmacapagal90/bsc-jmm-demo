@@ -40,12 +40,15 @@ public class CourseService {
     //PUT
     public Course updateCourse(Course course) {
         System.out.println("updates");
-        Course existing_course = courseRepository.findById(course.getId()).orElse(null);
+        Course existing_course = courseRepository.findById(course.getCourse_id()).orElse(null);
         existing_course.setName(course.getName());
         existing_course.setDescription(course.getDescription());
         existing_course.setStatus(course.getStatus());
+        existing_course.setUsername(course.getUsername());
         return courseRepository.save(existing_course);
     }
+
+
 
     //DELETE
     public String deleteCourse(int id) {
