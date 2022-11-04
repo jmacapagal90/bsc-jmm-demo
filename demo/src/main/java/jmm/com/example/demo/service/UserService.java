@@ -42,6 +42,7 @@ public class UserService {
     }
 
     public void saveUser(User user) {
+        System.out.println(user.toString());
         userRepository.save(user);
     }
 

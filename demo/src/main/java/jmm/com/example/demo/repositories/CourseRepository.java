@@ -11,4 +11,7 @@ public interface CourseRepository extends JpaRepository<Course, Integer> {
     Course findByName(String name);
 
     List<Course> findAllByUsername(String username);
+
 }
+
+//this is like a serializer

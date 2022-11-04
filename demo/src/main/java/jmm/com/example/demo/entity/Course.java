@@ -12,14 +12,13 @@ import org.springframework.data.rest.core.annotation.RestResource;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+
 public class Course {
-    public Course(int i, String string, String string2, String string3, int j) {
-    }
 
     //attr methods
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private int course_id;
 
     private String name;
     private String description;
@@ -28,7 +27,28 @@ public class Course {
     @Column(name = "username")
     private String username;
 
-    @OneToOne
-    @JoinColumn(name = "USER_ID")
+
+    @ManyToOne
+    @JoinColumn(name="user_id")
     private User user;
+
+
+    public Course(int course_id, String name, String description, String status, String username) {
+        super();
+        this.course_id = course_id;
+        this.name = name;
+        this.description = description;
+        this.status = status;
+        this.username = username;
+
+    }
+
+    public void setUser(User user){
+        this.user = user;
+    }
+
+    public User getUser(){
+        return user;
+    }
+
 }

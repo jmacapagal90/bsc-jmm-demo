@@ -1,6 +1,7 @@
 package jmm.com.example.demo.service;
 
 import jmm.com.example.demo.entity.Course;
+import jmm.com.example.demo.entity.User;
 import jmm.com.example.demo.repositories.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -40,10 +41,11 @@ public class CourseService {
     //PUT
     public Course updateCourse(Course course) {
         System.out.println("updates");
-        Course existing_course = courseRepository.findById(course.getId()).orElse(null);
+        Course existing_course = courseRepository.findById(course.getCourse_id()).orElse(null);
         existing_course.setName(course.getName());
         existing_course.setDescription(course.getDescription());
         existing_course.setStatus(course.getStatus());
+        existing_course.setUsername(course.getUsername());
         return courseRepository.save(existing_course);
     }
 
