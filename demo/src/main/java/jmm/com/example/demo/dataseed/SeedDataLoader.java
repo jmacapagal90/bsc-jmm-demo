@@ -38,9 +38,9 @@ public class SeedDataLoader implements CommandLineRunner {
 
 
 
-        Course course1 = new Course(1,"Intro to Political Science","Intro to Poli. Science","Active","PS101");
-        Course course2 = new Course(2,"Intro to Computer Science","Intro to Comp. Science","Active","CS101");
-        Course course3 = new Course(3,"Intro to Applied Sciences","Intro to App. Science","Active","AP101");
+        Course course1 = new Course(1,"Intro to Political Science","Intro to Poli. Science",true,"PS101");
+        Course course2 = new Course(2,"Intro to Computer Science","Intro to Comp. Science",true,"CS101");
+        Course course3 = new Course(3,"Intro to Applied Sciences","Intro to App. Science",false,"AP101");
 
         courseService.saveCourse(course1);
         courseService.saveCourse(course2);

@@ -33,8 +33,8 @@ public class CourseService {
     public Course getCourseByName(String name) {
         return courseRepository.findByName(name);
     }
-    public List<Course> getCoursesForUser(String username) {
-        return courseRepository.findAllByUsername(username);
+    public List<Course> getCoursesForUser(String classcode) {
+        return courseRepository.findAllByClasscode(classcode);
     }
 
     //PUT
@@ -43,8 +43,8 @@ public class CourseService {
         Course existing_course = courseRepository.findById(course.getId()).orElse(null);
         existing_course.setName(course.getName());
         existing_course.setDescription(course.getDescription());
-        existing_course.setStatus(course.getStatus());
-        existing_course.setUsername(course.getUsername());
+        existing_course.setStatus(course.isStatus());
+        existing_course.setClasscode(course.getClasscode());
         return courseRepository.save(existing_course);
     }
 

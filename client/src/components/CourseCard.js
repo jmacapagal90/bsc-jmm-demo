@@ -1,13 +1,14 @@
-
+import {XCircleFillIcon} from '@primer/octicons-react'
 
 function CourseCard({
     id,
     name,
     description,
     status,
-    username,
+    classcode,
     handleDeleteCourse
     }){
+
 
     function onDeleteCourse(){
         console.log(id)
@@ -21,11 +22,12 @@ function CourseCard({
         <div class="col">
             <div class="card" style={{width: "22rem"}}>
                 <div class="card-body">
+                    <button type="submit" class="btn btn-danger btn-sm" onClick={onDeleteCourse} ><XCircleFillIcon size={12}  /></button>
                     <h5 class="card-title"><strong>{name}</strong></h5>
-                    <p class="card-text">{description}</p>
-                    <p class="card-text">Course Status: {status}</p>
-                    <p class="card-text">Course Code: {username}</p>
-                    <button onClick={onDeleteCourse}>Remove Course</button>
+                    <p class="card-text"><i>{description}</i></p>
+                    <p class="card-text">Course Status: {(status) === true ? <strong>Active</strong> : <i>Not Active</i>}</p>
+                    <p class="card-text">Class Code: {classcode}</p>
+                    
                 </div>
             </div>
         </div>
