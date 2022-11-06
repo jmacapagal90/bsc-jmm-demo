@@ -10,7 +10,7 @@ function CourseList({ courses,handleDeleteCourse }){
                 name={course.name}
                 description={course.description}
                 status={course.status}
-                username={course.username}
+                classcode={course.classcode}
                 handleDeleteCourse={handleDeleteCourse}
             />
         )

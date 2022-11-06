@@ -10,5 +10,5 @@ import java.util.List;
 public interface CourseRepository extends JpaRepository<Course, Integer> {
     Course findByName(String name);
 
-    List<Course> findAllByUsername(String username);
+    List<Course> findAllByClasscode(String classcode);
 }

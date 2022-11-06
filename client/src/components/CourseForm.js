@@ -4,7 +4,7 @@ function CourseForm({onSubmitNewCourse}){
     const [courseName,setCourseName] = useState("");
     const [courseDesc,setCourseDesc] = useState("");
     const [courseStatus,setCourseStatus] = useState("");
-    const [courseCode,setCourseCode] = useState("");
+    const [classcode,setClasscode] = useState("");
 
    function submitCourse(e){
     e.preventDefault();
@@ -12,7 +12,7 @@ function CourseForm({onSubmitNewCourse}){
         name: courseName,
         description: courseDesc,
         status: courseStatus,
-        username: courseCode
+        classcode: classcode
     }
 
     fetch('/addCourse', {
@@ -38,28 +38,31 @@ function CourseForm({onSubmitNewCourse}){
         <div class="container-fluid">
         <form onSubmit={(e)=>{submitCourse(e)}}>
             <div class="form-group">
-                <label for="exampleInputCourseName">Course Name</label>
+                <label for="exampleInputCourseName" class="fw-bold">Course Name</label>
                 <input type="name" class="form-control" id="exampleInputCourseName" aria-describedby="courseName" placeholder="Enter Course Name" 
                 onChange={(e)=>setCourseName(e.target.value)} value={courseName}
                 />
-                <small id="emailHelp" class="form-text text-muted">Enter the name of your course</small>
-            </div>
+             </div>
             <div class="form-group">
-                <label for="exampleInputDescription">Course Description</label>
+                <label for="exampleInputDescription" class="fw-bold">Course Description</label>
                 <input type="description" class="form-control" id="exampleInputDescription" placeholder="Enter a brief description"
                     onChange={(e)=>setCourseDesc(e.target.value)} value={courseDesc}
                 />
             </div>
             <div class="form-group">
-                <label for="exampleInputCourseStatus">Course Status</label>
-                <input type="description" class="form-control" id="exampleInputStatus" placeholder="Enter a brief status"
-                onChange={(e)=>setCourseStatus(e.target.value)} value={courseStatus}
-                />
+                <label for="exampleInputCourseStatus" class="fw-bold">Course Status</label>
+                <select class="form-select" aria-label="Default select example"  
+                    onChange={(e)=>setCourseStatus(e.target.value)} 
+                    value={courseStatus}>
+                    <option selected>Select Class Status</option>
+                    <option value={true}>Active</option>
+                    <option value={false}>Not Active</option>
+                </select>  
             </div>
             <div class="form-group">
-                <label for="exampleInputClassCode">Course Code</label>
+                <label for="exampleInputClassCode" class="fw-bold">Course Code</label>
                 <input type="coursecode" class="form-control" id="exampleInputClassCode" placeholder="Enter the course code"
-                onChange={(e)=>setCourseCode(e.target.value)} value={courseCode}
+                onChange={(e)=>setClasscode(e.target.value)} value={classcode}
                 />
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>

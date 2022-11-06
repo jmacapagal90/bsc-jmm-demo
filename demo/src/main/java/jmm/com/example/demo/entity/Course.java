@@ -25,21 +25,21 @@ public class Course {
 
     private String name;
     private String description;
-    private String status;
+    private boolean status;
 
-    @Column(name = "username")
-    private String username;
+    @Column(name = "classcode")
+    private String classcode;
 
     @ManyToMany(mappedBy = "course")
     private List<User> users;
 
-    public Course(int id, String name, String description, String status,String username) {
+    public Course(int id, String name, String description, boolean status,String classcode) {
         super();
         this.id = id;
         this.name = name;
         this.description = description;
         this.status = status;
-        this.username = username;
+        this.classcode = classcode;
     }
 
 }
